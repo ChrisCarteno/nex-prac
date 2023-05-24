@@ -8,7 +8,8 @@ import { set } from 'mongoose';
 
 
 function Nav() {
-    const isUserLoggedIn = true;
+    const { data: session } = useSession();
+
     const [providers, setProviders ] = useState(null);
     const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -16,7 +17,7 @@ function Nav() {
         const setUpProviders = async () => {
             const response = await getProviders();
 
-            setUpProviders(response);
+            setProviders(response);
         }
         
         setUpProviders();
@@ -34,9 +35,10 @@ function Nav() {
             />
             <p className="text-2xl font-bold hidden md:flex">Promptopy</p>
         </Link>
+        {alert(providers)}
         {/* Desktop Nav */}
         <div className="sm:flex hidden">
-            {isUserLoggedIn ? (
+            {session?.user ? (
                 <div className='flex gap-3 md:gap-5>'>
                     <Link href="/create-prompt" className='black_btn'>
                         Create Prompt
@@ -72,7 +74,7 @@ function Nav() {
         </div>
         {/* Mobile Nav */}
         <div className="sm:hidden flex relative">
-            {isUserLoggedIn ? (
+            {session?.user ? (
                 <div className='flex'>
                     <Image src="/assets/images/logo.svg"
                     alt="Profile"
