@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 let isConnected = false;
 
 export const connectToDB = async () => {
-    mongoose.set('useFindAndModify', false);
+    mongoose.set('strictQuery', true);
 
     if(isConnected) {
         return;
