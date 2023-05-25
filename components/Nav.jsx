@@ -35,7 +35,6 @@ function Nav() {
             />
             <p className="text-2xl font-bold hidden md:flex">Promptopy</p>
         </Link>
-        {alert(providers)}
         {/* Desktop Nav */}
         <div className="sm:flex hidden">
             {session?.user ? (
