@@ -23,7 +23,7 @@ const CreatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={CreatePrompt}
+      handlerequired
     />
   )
 }
