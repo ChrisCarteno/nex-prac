@@ -15,7 +15,7 @@ function Form({ type, post, setPost, submitting, handleSubmit }) {
       >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Title
+            Enter Prompt
           </span>
           <textarea
             value={post.prompt}
