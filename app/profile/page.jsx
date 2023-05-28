@@ -37,7 +37,7 @@ const MyProfile = () => {
             desc="Welcomoe to your pesonlaized profile page"
             data={[posts]}
             handleEdit={ handleEdit }  
-            handdelDelete={ handleDelete }
+            handleDelete={ handleDelete }
         />
     )
 }
