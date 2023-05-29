@@ -27,7 +27,7 @@ const MyProfile = () => {
         console.log("Edit");
     }
 
-    const handleDelete = () =>{
+    const handleDelete =async () =>{
         console.log("Delete");
     }
 
@@ -35,7 +35,7 @@ const MyProfile = () => {
         <Profile 
             name="My"
             desc="Welcomoe to your pesonlaized profile page"
-            data={[posts]}
+            data={posts}
             handleEdit={ handleEdit }  
             handleDelete={ handleDelete }
         />
