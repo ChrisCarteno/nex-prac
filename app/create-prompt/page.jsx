@@ -12,10 +12,11 @@ const CreatePrompt = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [post , setPost] = useState({
-    title: '',
-    content: '',
-    tags: [],
+    prompt: '',
+    tag: '',
   });
+
+  
 
   const createPrompt = async (e) => {
     e.preventDefault();
