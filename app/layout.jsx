@@ -4,8 +4,8 @@ import Nav from '@components/Nav'
 import Provider from '@components/Provider'
 
 export const metadata = {
-    title: 'Promptopy',
-    description: 'Descover and Share Amazing Prompts',
+    title: 'Custom CRM',
+    description: 'A New Client Relationship Manager',
 }
 
 function RootLayout({children}) {

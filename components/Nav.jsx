@@ -19,9 +19,9 @@ function Nav() {
 
             setProviders(response);
         }
-        
+
         setUpProviders();
-    }, []) 
+    }, [])
 
 
   return (
@@ -33,7 +33,7 @@ function Nav() {
             height={30}
             className='object-contain'
             />
-            <p className="text-2xl font-bold hidden md:flex">Promptopy</p>
+            <p className="text-2xl font-bold hidden md:flex">Weavers CRM</p>
         </Link>
         {/* Desktop Nav */}
         <div className="sm:flex hidden">
@@ -84,21 +84,21 @@ function Nav() {
                     />
                     {toggleDropdown && (
                         <div className='dropdown'>
-                            <Link 
+                            <Link
                                 href="/profile"
                                 className="dropdown_link"
                                 onClick={() => setToggleDropdown(false)}
                             >
                                 My Profile
                             </Link>
-                            <Link 
+                            <Link
                                 href="/create-prompt"
                                 className="dropdown_link"
                                 onClick={() => setToggleDropdown(false)}
                             >
                                 Create Prompt
                             </Link>
-                            <button type='button' 
+                            <button type='button'
                             className="mt-5 w-full black_btn"
                                 onClick={() => {
                                     setToggleDropdown(false);
