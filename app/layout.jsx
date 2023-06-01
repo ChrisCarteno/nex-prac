@@ -2,7 +2,6 @@ import '@styles/globals.css'
 
 import Nav from '@components/Nav'
 import Provider from '@components/Provider'
-
 export const metadata = {
     title: 'Custom CRM',
     description: 'A New Client Relationship Manager',
