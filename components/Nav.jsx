@@ -42,6 +42,9 @@ function Nav() {
                     <Link href="/create-prompt" className='black_btn'>
                         Create Prompt
                     </Link>
+                    <Link href="/add-client" className='black_btn'>
+                        Add Client
+                    </Link>
                 <button type="button" onClick={signOut} className="outline_btn">
                     Sign Out
                 </button>
