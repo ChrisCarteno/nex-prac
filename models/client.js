@@ -20,7 +20,6 @@ const ClientSchema = new Schema({
     },
     address: {
         type: String,
-        required: [true, "Address is required"],
     },
     tag: {
         type: String,
