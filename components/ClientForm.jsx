@@ -20,7 +20,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='First Last'
             className='form_input'
             required
           />
@@ -32,7 +32,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='email@weaversdev.com'
             className='form_input'
             required
           />
@@ -44,7 +44,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='(760) 123-4567'
             className='form_input'
             required
           />
@@ -56,7 +56,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='Address Line'
             className='form_input'
             required
           />
