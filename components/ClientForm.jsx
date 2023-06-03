@@ -51,24 +51,12 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
         </label>
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Address
+            Client ID number
           </span>
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='Address Line'
-            className='form_input'
-            required
-          />
-        </label>
-        <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Tag <span className='font-normal'>(#vip, #lead, #lowPriority)</span>
-          </span>
-          <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder='#tag'
+            placeholder='1234'
             className='form_input'
             required
           />
@@ -90,7 +78,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Cancel
           </Link>
           <button type="submit" disabled={submitting} className='button_btn'>
-            {submitting}
+            Add
           </button>
         </div>
       </form>
