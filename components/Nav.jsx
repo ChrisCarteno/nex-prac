@@ -101,6 +101,13 @@ function Nav() {
                             >
                                 Create Prompt
                             </Link>
+                            <Link
+                                href="/add-client"
+                                className="dropdown_link"
+                                onClick={() => setToggleDropdown(false)}
+                            >
+                                Add Client
+                            </Link>
                             <button type='button'
                             className="mt-5 w-full black_btn"
                                 onClick={() => {

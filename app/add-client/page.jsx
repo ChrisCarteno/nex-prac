@@ -12,8 +12,11 @@ const AddClient = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [post , setPost] = useState({
-    prompt: '',
-    tag: '',
+    name: '',
+    email: '',
+    phone: '',
+    clientId: '',
+    comments: ''
   });
 
   

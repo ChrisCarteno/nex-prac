@@ -18,15 +18,8 @@ const ClientSchema = new Schema({
         type: String,
         required: [true, "Phone is required"],
     },
-    address: {
-        type: String,
-    },
-    tag: {
-        type: String,
-        required: [true, "Tag is required"],
-    },
-    address: {
-        type: String,
+    idNumber: {
+        type: Number,
     },
     comments: {
         type: String,
