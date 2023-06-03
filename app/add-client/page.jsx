@@ -19,7 +19,6 @@ const AddClient = () => {
     comments: ''
   });
 
-  
 
   const addClient = async (e) => {
     e.preventDefault();

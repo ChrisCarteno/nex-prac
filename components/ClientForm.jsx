@@ -3,12 +3,9 @@ import Link from 'next/link'
 function ClientForm({ post, setPost, submitting, handleSubmit }) {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
-      <h1 className='head_text text-left'>
+      <h1 className='head_text'>
         <span className='blue_gradient'>Add New Client </span>
       </h1>
-      <p className="desc text-left max-w-md">
-         Fill out Form to add a new client
-      </p>
       <form
         onSubmit={handleSubmit}
         className='mt-5 w-full max-w-2xl flex flex-col gap-2 glassmorphism'
@@ -18,8 +15,8 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             First and Last Name
           </span>
           <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            value={post.name}
+            onChange={(e) => setPost({ ...post, name: e.target.value })}
             placeholder='First Last'
             className='form_input'
             required
@@ -30,8 +27,9 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Email
           </span>
           <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            value={post.email}
+            type="email"
+            onChange={(e) => setPost({ ...post, email: e.target.value })}
             placeholder='email@weaversdev.com'
             className='form_input'
             required
@@ -42,8 +40,9 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Phone
           </span>
           <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            value={post.phone}
+            type='tel'
+            onChange={(e) => setPost({ ...post, phone: e.target.value })}
             placeholder='(760) 123-4567'
             className='form_input'
             required
@@ -54,8 +53,9 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Client ID number
           </span>
           <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
+            value={post.clientId}
+            type='number'
+            onChange={(e) => setPost({ ...post, clientId: e.target.value })}
             placeholder='1234'
             className='form_input'
             required
@@ -66,8 +66,8 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Comments
           </span>
           <textarea
-            value={post.prompt}
-            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+            value={post.comment}
+            onChange={(e) => setPost({ ...post, comment: e.target.value })}
             placeholder='Enter Client Comments'
             className='form_textarea'
             required
