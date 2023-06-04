@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-function ClientForm({ post, setPost, submitting, handleSubmit }) {
+function ClientForm({ type, post, setPost, submitting, handleSubmit }) {
   return (
     <section className='w-full max-w-full flex-start flex-col'>
       <h1 className='head_text'>
-        <span className='blue_gradient'>Add New Client </span>
+        <span className='blue_gradient'>{type} New Client </span>
       </h1>
       <form
         onSubmit={handleSubmit}
@@ -45,6 +45,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             onChange={(e) => setPost({ ...post, phone: e.target.value })}
             placeholder='(760) 123-4567'
             className='form_input'
+            min="0"
             required
           />
         </label>
@@ -57,6 +58,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             type='number'
             onChange={(e) => setPost({ ...post, clientId: e.target.value })}
             placeholder='1234'
+            min='0'
             className='form_input'
             required
           />
@@ -78,7 +80,7 @@ function ClientForm({ post, setPost, submitting, handleSubmit }) {
             Cancel
           </Link>
           <button type="submit" disabled={submitting} className='button_btn'>
-            Add
+            {submitting ? `${type}...` : type}
           </button>
         </div>
       </form>

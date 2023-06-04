@@ -16,7 +16,7 @@ const AddClient = () => {
     email: '',
     phone: '',
     clientId: '',
-    comments: ''
+    comment: ''
   });
 
 
@@ -28,9 +28,12 @@ const AddClient = () => {
       const response = await fetch('/api/client/new', {
         method: 'POST',
         body: JSON.stringify({
-          prompt: post.prompt,
           userId: session?.user.id,
-          tag: post.tag
+          name: post.name,
+          email: post.email,
+          phone: post.phone,
+          clientId: post.clientId,
+          comment: post.comment
         })
       })
 
@@ -45,10 +48,11 @@ const AddClient = () => {
   }
   return (
     <ClientForm
+      type='Add'
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={() => {}}
+      handleSubmit={addClient}
     />
   )
 }

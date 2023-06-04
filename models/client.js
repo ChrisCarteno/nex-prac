@@ -6,9 +6,8 @@ const ClientSchema = new Schema({
         ref: "User",
     },
     name:{
-        first: String,
-        last: String,
-        requires: [true, "Name is required"],
+        type: String,
+        required: [true, "Name is required"],
     },
     email: {
         type: String,
@@ -21,7 +20,7 @@ const ClientSchema = new Schema({
     idNumber: {
         type: Number,
     },
-    comments: {
+    comment: {
         type: String,
     },
     createdAt: {
