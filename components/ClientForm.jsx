@@ -6,6 +6,9 @@ function ClientForm({ type, post, setPost, submitting, handleSubmit }) {
       <h1 className='head_text'>
         <span className='blue_gradient'>{type} New Client </span>
       </h1>
+      <p className="desc text-left max-w-md">
+        {type} clients.
+      </p>
       <form
         onSubmit={handleSubmit}
         className='mt-5 w-full max-w-2xl flex flex-col gap-2 glassmorphism'
@@ -54,9 +57,9 @@ function ClientForm({ type, post, setPost, submitting, handleSubmit }) {
             Client ID number
           </span>
           <input
-            value={post.clientId}
+            value={post.idNumber}
             type='number'
-            onChange={(e) => setPost({ ...post, clientId: e.target.value })}
+            onChange={(e) => setPost({ ...post, idNumber: e.target.value })}
             placeholder='1234'
             min='0'
             className='form_input'

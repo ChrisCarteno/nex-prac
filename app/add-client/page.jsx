@@ -15,7 +15,7 @@ const AddClient = () => {
     name: '',
     email: '',
     phone: '',
-    clientId: '',
+    idNumber: 0,
     comment: ''
   });
 
@@ -32,7 +32,7 @@ const AddClient = () => {
           name: post.name,
           email: post.email,
           phone: post.phone,
-          clientId: post.clientId,
+          idNumber: post.idNumber,
           comment: post.comment
         })
       })

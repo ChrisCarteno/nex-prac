@@ -45,13 +45,10 @@ function ClientCard({ post, handleTagClick, handleEdit, handleDelete }) {
         </div>
       </div>
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.name}</p>
-      <p
-        className='font-inter text-sm blue_gradient cursor-pointer'
-        onClick={() => handleTagClick && handleTagClick(post.tag)}
-        >
+      <a href={'tel:' + post.phone} className='font-inter text-sm'>
         {post.phone}
-      </p>
-      <p>{post.email} {post.idNumber} {post.comment}</p>
+      </a>
+      <p>{post.email}</p>
       <p>{post.idNumber}</p>
       <p>{post.comment}</p>
       {session?.user.id === post.creator._id && pathName === '/profile' && (
