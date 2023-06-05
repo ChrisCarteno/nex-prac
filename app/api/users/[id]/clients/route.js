@@ -1,20 +1,18 @@
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
 import Client from "@models/client";
 
 export const GET = async (req, {params}) => {
     try{
         await connectToDB();
 
-        const prompts = await Prompt.find({
+        const clientInfo = await Client.find({
             creator: params.id,
         }).populate("creator");
 
-
-        return new Response(JSON.stringify(prompts), {
+        return new Response(JSON.stringify(clientInfo), {
             status: 200,
         });
     }catch(err){
-        return new Response("Failed to get prompts", {status: 500});
+        return new Response("Failed to get clients", {status: 500});
     }
 }

@@ -11,8 +11,10 @@ const MyProfile = () => {
     const router = useRouter();
 
     const { data: session } = useSession();
+    const { data2: session2 } = useSession();
 
     const [posts, setPosts] = useState([]);
+
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -20,11 +22,13 @@ const MyProfile = () => {
         const data = await res.json();
 
           setPosts(data);
+          console.log(data);
         }
-    
+
         if(session?.user.id) fetchPosts();
+
       }, []);
-    
+
     const handleEdit = (post) =>{
         router.push(`/update-prompt?id=${post._id}`);
     }
@@ -48,11 +52,11 @@ const MyProfile = () => {
     }
 
     return(
-        <Profile 
+        <Profile
             name="My"
             desc="Welcomoe to your pesonlaized profile page"
             data={posts}
-            handleEdit={ handleEdit }  
+            handleEdit={ handleEdit }
             handleDelete={ handleDelete }
         />
     )

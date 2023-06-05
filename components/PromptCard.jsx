@@ -11,7 +11,7 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete }) {
   const router = useRouter();
 
   const [copied, setCopied] = useState("");
-  
+
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
@@ -23,7 +23,7 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete }) {
       <div className="flex justify-between items-start gap-5">
         <div className='flex-1 flex justify-start items-center gap-3 cursor-pointer'>
           <Image
-            src={post.creator.image}
+            src={session?.user.image}
             alt="user_image"
             width={40}
             height={40}
@@ -46,7 +46,7 @@ function PromptCard({ post, handleTagClick, handleEdit, handleDelete }) {
         </div>
       </div>
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
-      <p 
+      <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
         >
