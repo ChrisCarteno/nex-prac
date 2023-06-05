@@ -14,7 +14,20 @@ const MyProfile = () => {
     const { data2: session2 } = useSession();
 
     const [posts, setPosts] = useState([]);
+    const [clients, setClients] = useState([]);
 
+    useEffect(() => {
+        const fetchClients = async () => {
+        const res = await fetch(`/api/users/${session?.user.id}/clients`);
+        const data = await res.json();
+
+          setClients(data);
+          console.log(data);
+        }
+
+        if(session?.user.id) fetchClients();
+
+      }, []);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -56,6 +69,7 @@ const MyProfile = () => {
             name="My"
             desc="Welcomoe to your pesonlaized profile page"
             data={posts}
+            data2={clients}
             handleEdit={ handleEdit }
             handleDelete={ handleDelete }
         />
