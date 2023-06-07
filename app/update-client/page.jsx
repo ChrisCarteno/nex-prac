@@ -8,7 +8,7 @@ import ClientForm from '@/components/ClientForm';
 const EditClient = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const promptId = searchParams.get('id');
+  const clientId = searchParams.get('id');
 
   const [submitting, setSubmitting] = useState(false);
   const [client , setClient] = useState({
@@ -22,7 +22,7 @@ const EditClient = () => {
 
 useEffect(() => {
     const getClientDetails = async () => {
-        const response = await fetch(`/api/client/${promptId}`);
+        const response = await fetch(`/api/client/${clientId}`);
         const data = await response.json();
 
         setPost({
@@ -34,21 +34,24 @@ useEffect(() => {
         })
     }
 
-    if(promptId) getClientDetails();
-}, [promptId]);
-  
+    if(clientId) getClientDetails();
+}, [clientId]);
+
   const editClient = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
-    if(!promptId) return alert('Client ID not found');
+    if(!clientId) return alert('Client ID not found');
 
     try {
-      const response = await fetch(`/api/client/${promptId}`, {
+      const response = await fetch(`/api/client/${clientId}`, {
         method: 'PATCH',
         body: JSON.stringify({
-          prompt: post.prompt,
-          tag: post.tag
+          name: client.name,
+          email: client.email,
+          phone: client.phone,
+          idNumber: client.idNumber,
+          comment: client.comment
         })
       })
 
