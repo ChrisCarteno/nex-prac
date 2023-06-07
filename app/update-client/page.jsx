@@ -11,11 +11,11 @@ const EditClient = () => {
   const clientId = searchParams.get('id');
 
   const [submitting, setSubmitting] = useState(false);
-  const [client , setClient] = useState({
+  const [post , setPost] = useState({
     name: '',
     email: '',
     phone: '',
-    idNumber: '',
+    idNumber: 0,
     comment: '',
   });
 
@@ -47,11 +47,11 @@ useEffect(() => {
       const response = await fetch(`/api/client/${clientId}`, {
         method: 'PATCH',
         body: JSON.stringify({
-          name: client.name,
-          email: client.email,
-          phone: client.phone,
-          idNumber: client.idNumber,
-          comment: client.comment
+          name: post.name,
+          email: post.email,
+          phone: post.phone,
+          idNumber: post.idNumber,
+          comment: post.comment
         })
       })
 
@@ -67,8 +67,8 @@ useEffect(() => {
   return (
     <ClientForm
       type="Edit"
-      post={client}
-      setPost={setClient}
+      post={post}
+      setPost={setPost}
       submitting={submitting}
       handleSubmit={editClient}
     />
