@@ -39,9 +39,6 @@ function Nav() {
         <div className="sm:flex hidden">
             {session?.user ? (
                 <div className='flex gap-3 md:gap-5>'>
-                    <Link href="/create-prompt" className='black_btn'>
-                        Create Prompt
-                    </Link>
                     <Link href="/add-client" className='black_btn'>
                         Add Client
                     </Link>
@@ -93,13 +90,6 @@ function Nav() {
                                 onClick={() => setToggleDropdown(false)}
                             >
                                 My Profile
-                            </Link>
-                            <Link
-                                href="/create-prompt"
-                                className="dropdown_link"
-                                onClick={() => setToggleDropdown(false)}
-                            >
-                                Create Prompt
                             </Link>
                             <Link
                                 href="/add-client"
