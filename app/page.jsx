@@ -12,8 +12,6 @@ function Home () {
          stack application that uses React, Node, Express, and MongoDB.
           It is a work in progress, but I am excited to see where it goes.
         </p>
-
-        <Feed />
     </section>
   )
 }
